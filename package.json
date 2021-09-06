@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-rest-express-mysql",
+  "version": "1.0.0",
+  "description": "Criando APIs REST em Node com Express e MySql",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegoffnogueira/nodejs-rest-express-mysql.git"
+  },
+  "author": "Diego Nogueira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegoffnogueira/nodejs-rest-express-mysql/issues"
+  },
+  "homepage": "https://github.com/diegoffnogueira/nodejs-rest-express-mysql#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
