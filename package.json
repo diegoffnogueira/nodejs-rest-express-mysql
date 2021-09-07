@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/diegoffnogueira/nodejs-rest-express-mysql#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
