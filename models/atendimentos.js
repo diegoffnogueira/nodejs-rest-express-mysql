@@ -36,10 +36,64 @@ class Atendimento {
                 if (error) {
                     response.status(400).json(error)
                 } else {
-                    response.status(201).json(result)
+                    response.status(201).json(atendimentoWithData)
                 }
             })
         }
+    }
+
+    list(response){
+        const sql = 'SELECT * FROM atendimentos'
+
+        connection.query(sql, (error, result) => {
+            if (error) {
+                response.status(400).json(error)
+            } else {
+                response.status(200).json(result)
+            }
+        })
+    }
+
+    listById(response, id){
+        const sql = `SELECT * FROM atendimentos WHERE id=${id}`
+
+        connection.query(sql, (error, result) => {
+            const atendimento = result[0]
+
+            if (error) {
+                response.status(400).json(error)
+            } else {
+                response.status(200).json(atendimento)
+            }
+        })
+    }
+
+    update(id, response, valores) {
+        const sql = 'UPDATE atendimentos SET ? WHERE id=?'
+
+        if (valores.data) {
+            valores.data = moment(valores.data, 'DD/MM/YYYY').format('YYYY-MM-DD')
+        }
+
+        connection.query(sql, [valores, id], (error, result) => {
+            if (error) {
+                response.status(400).json(error)
+            } else {
+                response.status(200).json({...valores, id})
+            }
+        })
+    }
+
+    delete(id, response){
+        const sql = `DELETE FROM atendimentos WHERE id=${id}`
+
+        connection.query(sql, (error, result) => {
+            if (error) {
+                response.status(400).json(error)
+            } else {
+                response.status(200).json({id})
+            }
+        })
     }
 }
 
