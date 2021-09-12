@@ -18,7 +18,7 @@ module.exports = (filePath, fileName, createImageCallback) => {
         const erro = 'Erro. Tipo de arquivo inválido!'
         createImageCallback(erro)
     } else {
-        const newPath = `./assets/imagens/${fileName}${tipo}`
+        const newPath = `../../assets/imagens/${fileName}${tipo}`
 
         fs.createReadStream(filePath)
             .pipe(fs.createWriteStream(newPath))
